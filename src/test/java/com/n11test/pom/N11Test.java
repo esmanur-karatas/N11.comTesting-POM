@@ -2,6 +2,9 @@ package com.n11test.pom;
 
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
+import pages.ProductDetailPage;
+import pages.ResultPage;
+import pages.TabBarPage;
 
 public class N11Test extends BaseTest{
 
@@ -10,8 +13,8 @@ public class N11Test extends BaseTest{
     ProductDetailPage productDetailPage;
     @Test(priority = 1)
     public void searchTest (){
-        driver.get("https://www.n11.com/");
         tabBarPage = new TabBarPage(driver);
+        tabBarPage.navigateTo("https://www.n11.com/");
         tabBarPage.search("Laptop");
     }
     @Test(priority = 2)
